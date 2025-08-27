@@ -1,1 +1,103 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmic Lines Background</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background: #0d0f12; /* dark background */
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+    h1 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        text-align: center;
+        color: #4caf50;
+    }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<h1>CosmicX</h1>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+const numPoints = 60;
+const points = [];
+
+class Point {
+    constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+    }
+    move() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+    }
+}
+
+for (let i = 0; i < numPoints; i++) {
+    points.push(new Point());
+}
+
+function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw lines
+    for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+            let dx = points[i].x - points[j].x;
+            let dy = points[i].y - points[j].y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 150) {
+                ctx.strokeStyle = 'rgba(76, 175, 80,' + (1 - dist / 150) + ')';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(points[i].x, points[i].y);
+                ctx.lineTo(points[j].x, points[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    // Draw points
+    points.forEach(p => {
+        ctx.fillStyle = '#4caf50';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
+        ctx.fill();
+        p.move();
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
+window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+});
+</script>
+</body>
+</html>
