@@ -1,168 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CosmicX</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0d0f12;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
+---
+title: 'About <subject>'
+shortTitle: '<subject>'
+intro: 'Article intro. See tips for a great intro below.'
+product: "optional product callout"
+type: overview
+topics:
+  - topic
+versions:
+  - version
+---
 
-    .logo {
-      font-size: 3em;
-      color: #4caf50;
-      margin-bottom: 0.2em;
-    }
+{% comment %}
+- Follow the guidelines in https://docs.github.com/contributing/writing-for-github-docs/content-model#conceptual to write this article.
+- Great intros give readers a quick understanding of what's in the article, so they can tell whether it's relevant to them before moving ahead. For more tips, see https://docs.github.com/contributing/writing-for-github-docs/content-model
+- For product callout info, see https://github.com/github/docs/tree/main/content#product
+- For product version instructions, see https://github.com/github/docs/tree/main/content#versioning
+- Remove these comments from your article file when you're done writing.
+{% endcomment %}
 
-    .title {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-    }
+## A section here
 
-    .tagline {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-bottom: 0.5em;
-    }
+{% comment %}
+Write one or two paragraphs about the main idea of your topic, as a summary.
+Make sure you don't have any content that isn't preceded by a header, or it won't be linkable in our table of contents.
+{% endcomment %}
 
-    .subheading {
-      font-size: 1em;
-      color: #888;
-      margin-bottom: 2em;
-    }
+## Another section here
 
-    .headline {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-    }
+{% comment %}
+Write one or two paragraphs about another element of your topic.
+Keep adding headers and sections until you've completed your article.
+{% endcomment %}
 
-    .headline .highlight {
-      color: #4caf50;
-    }
+## Further reading
 
-    .description {
-      max-width: 600px;
-      font-size: 1em;
-      color: #aaa;
-      margin-bottom: 2em;
-    }
+{% comment %}
+Optionally, include a bulleted list of related articles the user can reference to extend the concepts covered in this article. Consider linking to procedural articles or tutorials that help the user use the information in your article.
+{% endcomment %}
 
-    .buttons {
-      display: flex;
-      gap: 1em;
-      margin-bottom: 1.5em;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      padding: 0.8em 1.5em;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .download {
-      background: #4caf50;
-      color: #fff;
-    }
-
-    .download:hover {
-      background: #43a047;
-    }
-
-    .source {
-      background: transparent;
-      border: 2px solid #4caf50;
-      color: #4caf50;
-    }
-
-    .source:hover {
-      background: #1b1d21;
-    }
-
-    .doc-link {
-      display: block;
-      margin-bottom: 2em;
-      color: #4caf50;
-      text-decoration: underline;
-    }
-
-    .tags {
-      display: flex;
-      gap: 1em;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 2em;
-    }
-
-    .tag {
-      background: #1b1d21;
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      font-size: 0.9em;
-      color: #4caf50;
-      border: 1px solid #4caf50;
-    }
-
-    .terminal {
-      background: #111;
-      border: 1px solid #4caf50;
-      padding: 1em;
-      border-radius: 5px;
-      font-family: monospace;
-      color: #4caf50;
-      max-width: 600px;
-      margin-bottom: 2em;
-      text-align: left;
-    }
-  </style>
-</head>
-<body>
-  <div class="logo">Cx</div>
-  <div class="title">CosmicX</div>
-  <div class="tagline">The next generation development platform.</div>
-  <div class="subheading">Previously Enterprise – Now Open Source.</div>
-
-  <div class="headline">Unleash the <span class="highlight">full</span> potential</div>
-  <div class="description">
-    Experience the power that was once behind enterprise licensing – now available to everyone for free.
-  </div>
-
-  <div class="buttons">
-    <a href="#" class="download">Download Latest Version (v1.0.1)</a>
-    <a href="#" class="source">Browse Source Code</a>
-  </div>
-
-  <a href="#" class="doc-link">View Documentation</a>
-
-  <div class="tags">
-    <div class="tag">Open Source</div>
-    <div class="tag">Enterprise Security</div>
-    <div class="tag">Self-Hosted</div>
-    <div class="tag">High Performance</div>
-  </div>
-
-  <div class="terminal">
-    <code>
-      $ cosmicx --version<br />
-      CosmicX v1.0.1<br />
-      $ cosmicx init my-project<br />
-      ✔ Project initialized successfully
-    </code>
-  </div>
-</body>
-</html>
+- [Article title](article-URL)
